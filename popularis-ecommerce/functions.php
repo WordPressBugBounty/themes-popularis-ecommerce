@@ -207,8 +207,12 @@ require_once( trailingslashit(get_template_directory()) . 'inc/extra.php' );
 /**
  *  Theme Page
  */
-require_once( trailingslashit(get_template_directory()) . 'inc/admin/dashboard.php' );
-require_once( trailingslashit(get_template_directory()) . 'inc/admin/customizer.php' );
+function popularis_ecommerce_theme_actions() {
+	require_once( trailingslashit(get_template_directory()) . 'inc/admin/dashboard.php' );
+	require_once( trailingslashit(get_template_directory()) . 'inc/admin/customizer.php' );
+}
+
+add_action('init', 'popularis_ecommerce_theme_actions');
 
 /**
  * Register WooCommerce functions
